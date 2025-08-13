@@ -14,7 +14,7 @@ public class RemoverFuncionarioTest {
         List<Funcionario> novaListaFuncionarios = removerFuncionario.remover(funcionarios, nomeFuncionario);
         Boolean temFuncionario = false;
         for (Funcionario funcionario : novaListaFuncionarios) {
-            if (funcionario.getNome() == nomeFuncionario) {
+            if (funcionario.getNome().equals(nomeFuncionario)) {
                 temFuncionario = true;
             }
         }

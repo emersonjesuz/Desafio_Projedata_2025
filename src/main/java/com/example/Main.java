@@ -53,7 +53,7 @@ public class Main {
 
                 FuncionarioFiltro<List<Funcionario>> funcionariosFiltrarPorMesAnivesario = new FuncionariosFiltrarPorAnivesarioNoMes();
                 imprimirFuncionarios.imprimir(funcionariosFiltrarPorMesAnivesario.filtra(funcionariosComAumentoSalario),
-                                "Lista de funcionarios por mes animverios");
+                                "Lista de funcionarios por mes de Anivesario 10 e 12");
 
                 FuncionarioFiltro<Funcionario> funcionarioFiltrarComMaiorIdade = new FuncionarioFiltrarComMaiorIdade();
                 ImprimirFuncionarioMaisVelho imprimirFuncionarioMaisVelho = new ImprimirFuncionarioMaisVelho();
@@ -63,15 +63,15 @@ public class Main {
 
                 FuncionarioFiltro<List<Funcionario>> funcionariosPorOrdemAlfabetica = new FuncionariosFiltrarPorOrdemAlfabetica();
                 imprimirFuncionarios.imprimir(funcionariosPorOrdemAlfabetica.filtra(funcionariosComAumentoSalario),
-                                "Lista de funcionarios por order alfabetica");
+                                "Lista de funcionarios por order alfabética");
 
                 CalculadorTotalDeSalarios calculadorTotalSalarios = new CalculadorTotalDeSalarios();
                 ImprimirTotalSalarios imprimirTotalSalarios = new ImprimirTotalSalarios();
                 imprimirTotalSalarios.imprimir(calculadorTotalSalarios.calcular(funcionariosComAumentoSalario),
-                                "Valor total dos salarios");
+                                "Valor total dos Salarios");
 
-                ImprimirSalariosMinimosFuncionarios imprimirSalariosMinumosFuncionarios = new ImprimirSalariosMinimosFuncionarios();
-                imprimirSalariosMinumosFuncionarios.imprimir(funcionariosComAumentoSalario,
+                ImprimirSalariosMinimosFuncionarios imprimirSalariosMinimosFuncionarios = new ImprimirSalariosMinimosFuncionarios();
+                imprimirSalariosMinimosFuncionarios.imprimir(funcionariosComAumentoSalario,
                                 "Lista de funcionarios com quantidade de salários minimos");
         }
 }
