@@ -14,8 +14,24 @@ public class Funcionario extends Pessoa {
 
     public Funcionario(String name, LocalDate dataNascimento, BigDecimal salario, String funcao) {
         super(name, dataNascimento);
+
+        this.validarSalario(salario);
+        this.validarFuncao(funcao);
+
         this.salario = salario;
         this.funcao = funcao;
+    }
+
+    private void validarSalario(BigDecimal salario) {
+        if (salario.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IllegalArgumentException("O salario não pode ser menor que R$ 0,01");
+        }
+    }
+
+    private void validarFuncao(String funcao) {
+        if (funcao.isEmpty()) {
+            throw new IllegalArgumentException("A função do funcionario é obrigatória!");
+        }
     }
 
     public BigDecimal getSalario() {
