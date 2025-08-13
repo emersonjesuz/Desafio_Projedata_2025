@@ -72,6 +72,6 @@ public class Main {
 
                 ImprimirSalariosMinimosFuncionarios imprimirSalariosMinumosFuncionarios = new ImprimirSalariosMinimosFuncionarios();
                 imprimirSalariosMinumosFuncionarios.imprimir(funcionariosComAumentoSalario,
-                                "Lista de funcionarios com quantidade de salários minimus");
+                                "Lista de funcionarios com quantidade de salários minimos");
         }
 }
