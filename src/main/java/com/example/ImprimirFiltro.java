@@ -11,6 +11,7 @@ public interface ImprimirFiltro<I> {
 class ImprimirFuncionarios implements ImprimirFiltro<List<Funcionario>> {
     @Override
     public void imprimir(List<Funcionario> funcionarios, String titulo) {
+        System.out.println("");
         System.out.println("----- " + titulo + " -----");
         System.out.println("");
         for (Funcionario funcionario : funcionarios) {
@@ -23,7 +24,7 @@ class ImprimirFuncionarios implements ImprimirFiltro<List<Funcionario>> {
 class ImprimirFuncionariosPorFuncao implements ImprimirFiltro<Map<String, List<Funcionario>>> {
     @Override
     public void imprimir(Map<String, List<Funcionario>> funcionarios, String titulo) {
-        System.out.println("----- " + titulo + " -----");
+        System.out.println("\n----- " + titulo + " -----");
         System.out.println("");
         for (Map.Entry<String, List<Funcionario>> funcao : funcionarios.entrySet()) {
             System.out.println(funcao.getKey() + ": ");
