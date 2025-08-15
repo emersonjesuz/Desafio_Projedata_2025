@@ -49,16 +49,16 @@ public class Main {
 
                 ImprimirFuncionariosPorFuncao imprimirFuncionariosPorFuncao = new ImprimirFuncionariosPorFuncao();
                 imprimirFuncionariosPorFuncao.imprimir(funcionariosFiltradoPorFuncao,
-                                "Lista de funcionarios por função");
+                                "Lista de funcionarios por funções");
 
                 FuncionarioFiltro<List<Funcionario>> funcionariosFiltrarPorMesAnivesario = new FuncionariosFiltrarPorAnivesarioNoMes();
                 imprimirFuncionarios.imprimir(funcionariosFiltrarPorMesAnivesario.filtra(funcionariosComAumentoSalario),
                                 "Lista de funcionarios por mes de Anivesario 10 e 12");
 
                 FuncionarioFiltro<Funcionario> funcionarioFiltrarComMaiorIdade = new FuncionarioFiltrarComMaiorIdade();
-                ImprimirFuncionarioMaisVelho imprimirFuncionarioMaisVelho = new ImprimirFuncionarioMaisVelho();
                 Funcionario funcionarioMaisVelho = funcionarioFiltrarComMaiorIdade
                                 .filtra(funcionariosComAumentoSalario);
+                ImprimirFuncionarioMaisVelho imprimirFuncionarioMaisVelho = new ImprimirFuncionarioMaisVelho();
                 imprimirFuncionarioMaisVelho.imprimir(funcionarioMaisVelho, "Funcionario mais velho");
 
                 FuncionarioFiltro<List<Funcionario>> funcionariosPorOrdemAlfabetica = new FuncionariosFiltrarPorOrdemAlfabetica();
@@ -72,6 +72,6 @@ public class Main {
 
                 ImprimirSalariosMinimosFuncionarios imprimirSalariosMinimosFuncionarios = new ImprimirSalariosMinimosFuncionarios();
                 imprimirSalariosMinimosFuncionarios.imprimir(funcionariosComAumentoSalario,
-                                "Lista de funcionarios com quantidade de salários minimos");
+                                "Lista de funcionarios com quantidade de salários Minimos");
         }
 }
