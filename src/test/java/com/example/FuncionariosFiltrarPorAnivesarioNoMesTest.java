@@ -37,7 +37,6 @@ public class FuncionariosFiltrarPorAnivesarioNoMesTest {
                 .filtra(funcionarios);
 
         List<String> listaNomesFuncionario = new ArrayList<>(Arrays.asList("João", "Caio", "Laura", "Heloísa"));
-        listaFuncionariosPorAnivesarioNoMes.forEach(System.out::println);
         assertTrue(listaFuncionariosPorAnivesarioNoMes.stream()
                 .allMatch(funcionario -> listaNomesFuncionario.contains(funcionario.getNome())));
     }
