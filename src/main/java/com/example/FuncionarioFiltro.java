@@ -28,13 +28,16 @@ class FuncionariosFiltrarPorFuncoes implements FuncionarioFiltro<Map<String, Lis
 }
 
 class FuncionariosFiltrarPorAnivesarioNoMes implements FuncionarioFiltro<List<Funcionario>> {
+    private List<Integer> mesesAnivesarios;
+
+    public FuncionariosFiltrarPorAnivesarioNoMes(List<Integer> mesesAnivesarios) {
+        this.mesesAnivesarios = mesesAnivesarios;
+    }
+
     @Override
     public List<Funcionario> filtra(List<Funcionario> funcionarios) {
-        List<Integer> mesesAnivesarios = new ArrayList<>();
-        mesesAnivesarios.add(10);
-        mesesAnivesarios.add(12);
         return funcionarios.stream()
-                .filter(funcionario -> mesesAnivesarios.contains(funcionario.getDataNascimento().getMonthValue()))
+                .filter(funcionario -> this.mesesAnivesarios.contains(funcionario.getDataNascimento().getMonthValue()))
                 .collect(Collectors.toList());
     }
 }

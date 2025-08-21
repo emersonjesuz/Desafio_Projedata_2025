@@ -35,4 +35,13 @@ public class PessoaTest {
                 () -> new Pessoa(nome, dataNascimento));
         assertEquals("A data de nascimento é obrigatória!", exception.getMessage());
     }
+
+    @Test
+    public void deveRetornarDataNascimentoFormatada() {
+        String nome = "Manuel";
+        LocalDate dataNascimento = LocalDate.parse("2000-10-18");
+        Pessoa pessoa = new Pessoa(nome, dataNascimento);
+        String resposta = "18/10/2000";
+        assertEquals(resposta, pessoa.getDataFormatada());
+    }
 }

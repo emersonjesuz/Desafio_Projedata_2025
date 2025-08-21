@@ -15,7 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-     <dependencies>
+    <dependencies>
         <!-- Exemplo: JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -24,4 +24,17 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.example.Principal</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

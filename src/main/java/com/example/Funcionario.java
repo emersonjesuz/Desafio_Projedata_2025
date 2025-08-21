@@ -2,15 +2,15 @@ package com.example;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.time.LocalDate;
-import java.time.Period;
+import java.util.Locale;
 
 public class Funcionario extends Pessoa {
+    private final static BigDecimal BASE_PORCENTAGEM = new BigDecimal(100);
+    private final static BigDecimal SALARIO_MINIMO = new BigDecimal("1212.00");
     private BigDecimal salario;
     private String funcao;
-
-    final static BigDecimal BASE_PORCENTAGEM = new BigDecimal(100);
-    final static BigDecimal SALARIO_MINIMO = new BigDecimal("1212.00");
 
     public Funcionario(String name, LocalDate dataNascimento, BigDecimal salario, String funcao) {
         super(name, dataNascimento);
@@ -54,17 +54,9 @@ public class Funcionario extends Pessoa {
         return this.salario.divide(SALARIO_MINIMO, 0, RoundingMode.DOWN);
     }
 
-    public String getDataFormatada() {
-        return FormatadorData.formatar(this.getDataNascimento());
-    }
-
     public String getSalarioFormatado() {
-        return FormatadorSalario.formatar(salario);
-    }
-
-    public int getIdade() {
-        LocalDate hoje = LocalDate.now();
-        return Period.between(this.getDataNascimento(), hoje).getYears();
+        NumberFormat formatador = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        return formatador.format(this.salario);
     }
 
     @Override

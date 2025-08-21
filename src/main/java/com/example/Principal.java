@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class Main {
+public class Principal {
         public static void main(String[] args) {
                 List<Funcionario> funcionarios = new ArrayList<>(Arrays.asList(
                                 new Funcionario("Maria", LocalDate.parse("2000-10-18"), new BigDecimal("2009.44"),
@@ -51,7 +51,11 @@ public class Main {
                 imprimirFuncionariosPorFuncao.imprimir(funcionariosFiltradoPorFuncao,
                                 "Lista de funcionarios por funções");
 
-                FuncionarioFiltro<List<Funcionario>> funcionariosFiltrarPorMesAnivesario = new FuncionariosFiltrarPorAnivesarioNoMes();
+                List<Integer> mesesAnivesarios = new ArrayList<>();
+                mesesAnivesarios.add(10);
+                mesesAnivesarios.add(12);
+                FuncionarioFiltro<List<Funcionario>> funcionariosFiltrarPorMesAnivesario = new FuncionariosFiltrarPorAnivesarioNoMes(
+                                mesesAnivesarios);
                 imprimirFuncionarios.imprimir(funcionariosFiltrarPorMesAnivesario.filtra(funcionariosComAumentoSalario),
                                 "Lista de funcionarios por mes de Anivesario 10 e 12");
 

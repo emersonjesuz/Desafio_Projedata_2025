@@ -1,6 +1,5 @@
 package com.example;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -47,12 +46,12 @@ class ImprimirFuncionarioMaisVelho implements ImprimirFiltro<Funcionario> {
     }
 }
 
-class ImprimirTotalSalarios implements ImprimirFiltro<BigDecimal> {
+class ImprimirTotalSalarios implements ImprimirFiltro<String> {
     @Override
-    public void imprimir(BigDecimal salario, String titulo) {
+    public void imprimir(String salario, String titulo) {
         System.out.println("----- " + titulo + " -----");
         System.out.println("");
-        System.out.println("Total: " + FormatadorSalario.formatar(salario));
+        System.out.println("Total: " + salario);
         System.out.println("");
     }
 }
